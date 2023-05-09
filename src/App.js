@@ -7,7 +7,8 @@ import './App.css';
 function App() {
   const [tasks, setTasks] = useState([{
     "id": "1",
-    "text": "Hello"
+    "text": "Hello",
+    "day": "now"
   }])
   return (
     <div className="container">
