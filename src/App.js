@@ -1,5 +1,5 @@
-// import logo from './logo.svg';
-import { useState } from 'react'
+// mock backend server build
+import { useState, useEffect } from 'react'
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 import AddTask from './components/AddTask';
@@ -7,26 +7,19 @@ import './App.css';
 
 function App() {
   const [showAddTask, setShowAddTask] = useState(false)
-  const [tasks, setTasks] = useState([
-    {
-    "id": 1,
-    "text": "One",
-    "day": "before",
-    "reminder": true
-    },
-    {
-    "id": 2,
-    "text": "Two",
-    "day": "now",
-    "reminder": true
-    },
-    {
-    "id": 3,
-    "text": "Three",
-    "day": "after",
-    "reminder": false
+  const [tasks, setTasks] = useState([])
+
+  useEffect(() => {
+    const fetchTasks = async () => {
+      const res = await fetch('http://localhost:5000/tasks')
+      const data = await res.json()
+
+      console.log(data)
     }
-  ])
+
+    fetchTasks()
+  }, []) // the empty array (2nd arg) is not needed here as it is implicit if ommitted.
+  // the empty array shows dependencies and since there are none, useEffect will run only when the component mounts 
 
   // add task
   const addTask = (task) => {
