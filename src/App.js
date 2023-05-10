@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+// basic react branch - no backend server
 import { useState } from 'react'
 import Header from './components/Header';
 import Tasks from './components/Tasks';
