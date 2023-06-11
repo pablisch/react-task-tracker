@@ -1,5 +1,6 @@
 # Getting Started with Create React App
 
+This project was built as a first taste of React from the Brad Traversy YouTube tutorial, [React JS Crash Course](https://www.youtube.com/watch?v=w7ejDZ8SWv8). It is a simple task tracker that allows you to add and delete tasks. It also has a toggle feature that allows you to toggle the reminder on and off.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
